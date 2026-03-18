@@ -147,6 +147,24 @@
     @apply border-border outline-ring/50;
   }
 
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  #root {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  img,
+  video,
+  canvas,
+  svg {
+    max-width: 100%;
+  }
+
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-poppins);

@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { useEffect, useRef, useState } from 'react';
-import Masonry from 'react-responsive-masonry';
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
 interface GalleryImage {
   url: string;
@@ -139,53 +139,55 @@ export function Portfolio() {
         </motion.div>
 
         {/* Masonry Gallery */}
-        <Masonry columnsCount={3} gutter="24px" className="mb-12">
-          {filteredImages.map((image, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-2xl cursor-pointer"
-              style={{
-                aspectRatio: index % 3 === 0 ? '3/4' : '4/3'
-              }}
-            >
-              <img
-                src={image.url}
-                alt={image.location}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              
-              {/* Overlay */}
-              <div 
-                className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6"
+        <ResponsiveMasonry columnsCountBreakPoints={{ 0: 1, 640: 2, 1024: 3 }}>
+          <Masonry gutter="24px" className="mb-12">
+            {filteredImages.map((image, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group relative overflow-hidden rounded-2xl cursor-pointer"
+                style={{
+                  aspectRatio: index % 3 === 0 ? '3/4' : '4/3'
+                }}
               >
+                <img
+                  src={image.url}
+                  alt={image.location}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                
+                {/* Overlay */}
                 <div 
-                  className="uppercase text-[10px] tracking-[0.15em] mb-2"
-                  style={{
-                    fontFamily: 'var(--font-poppins)',
-                    color: 'var(--gold-primary)',
-                    fontWeight: 500
-                  }}
+                  className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6"
                 >
-                  {image.category}
+                  <div 
+                    className="uppercase text-[10px] tracking-[0.15em] mb-2"
+                    style={{
+                      fontFamily: 'var(--font-poppins)',
+                      color: 'var(--gold-primary)',
+                      fontWeight: 500
+                    }}
+                  >
+                    {image.category}
+                  </div>
+                  <div 
+                    className="text-xl"
+                    style={{
+                      fontFamily: 'var(--font-cormorant)',
+                      fontStyle: 'italic',
+                      color: '#FFFFFF',
+                      fontWeight: 300
+                    }}
+                  >
+                    {image.location}
+                  </div>
                 </div>
-                <div 
-                  className="text-xl"
-                  style={{
-                    fontFamily: 'var(--font-cormorant)',
-                    fontStyle: 'italic',
-                    color: '#FFFFFF',
-                    fontWeight: 300
-                  }}
-                >
-                  {image.location}
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </Masonry>
+              </motion.div>
+            ))}
+          </Masonry>
+        </ResponsiveMasonry>
 
         {/* View Full Portfolio Button */}
         <div className="text-center">

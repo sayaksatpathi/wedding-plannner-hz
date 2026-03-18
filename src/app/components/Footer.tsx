@@ -188,14 +188,14 @@ export function Footer() {
             >
               Subscribe for wedding tips & inspiration
             </p>
-            <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
+            <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your email"
                 required
-                className="flex-1 px-4 py-2 rounded-full bg-[rgba(255,255,255,0.05)] outline-none transition-colors duration-300 focus:bg-[rgba(255,255,255,0.1)]"
+                className="w-full flex-1 px-4 py-2 rounded-full bg-[rgba(255,255,255,0.05)] outline-none transition-colors duration-300 focus:bg-[rgba(255,255,255,0.1)]"
                 style={{
                   fontFamily: 'var(--font-poppins)',
                   fontSize: '13px',
@@ -206,7 +206,7 @@ export function Footer() {
               />
               <button
                 type="submit"
-                className="px-6 py-2 rounded-full transition-all duration-300 hover:scale-105"
+                className="w-full sm:w-auto px-6 py-2 rounded-full transition-all duration-300 hover:scale-105"
                 style={{
                   background: 'linear-gradient(135deg, #C9A84C, #F0E0A0, #C9A84C)',
                   fontFamily: 'var(--font-poppins)',
