@@ -1,0 +1,193 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Aurélie Weddings Color System */
+  --bg-ivory: #FDFAF6;
+  --surface-white: #FFFFFF;
+  --gold-primary: #C9A84C;
+  --gold-light: #E8D5A3;
+  --gold-shimmer: linear-gradient(135deg, #C9A84C, #F0E0A0, #C9A84C);
+  --blush-pink: #F2D4D0;
+  --deep-rose: #B07080;
+  --sage-soft: #D6E4DC;
+  --text-primary: #2C1F1A;
+  --text-secondary: #7A6A63;
+  --text-light: #BDB0A8;
+  --light-blush-wash: #FAF0EE;
+  --deep-ivory: #F5EFE8;
+  --dark-bg: #1E1612;
+  --footer-dark: #13100E;
+  
+  /* Font Families */
+  --font-cormorant: 'Cormorant Garamond', serif;
+  --font-playfair: 'Playfair Display', serif;
+  --font-poppins: 'Poppins', sans-serif;
+  
+  /* Default theme tokens */
+  --font-size: 16px;
+  --background: var(--bg-ivory);
+  --foreground: var(--text-primary);
+  --card: var(--surface-white);
+  --card-foreground: var(--text-primary);
+  --popover: var(--surface-white);
+  --popover-foreground: var(--text-primary);
+  --primary: var(--gold-primary);
+  --primary-foreground: #FFFFFF;
+  --secondary: var(--blush-pink);
+  --secondary-foreground: var(--text-primary);
+  --muted: var(--text-light);
+  --muted-foreground: var(--text-secondary);
+  --accent: var(--gold-light);
+  --accent-foreground: var(--text-primary);
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(201, 168, 76, 0.2);
+  --input: transparent;
+  --input-background: #f3f3f5;
+  --switch-background: #cbced4;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: var(--gold-primary);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: #030213;
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: #13100E;
+  --foreground: #F0E8DF;
+  --card: #1E1916;
+  --card-foreground: #F0E8DF;
+  --popover: #1E1916;
+  --popover-foreground: #F0E8DF;
+  --primary: var(--gold-primary);
+  --primary-foreground: #13100E;
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: #F0E8DF;
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: #F0E8DF;
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-poppins);
+  }
+
+  /**
+  * Default typography styles for HTML elements (h1-h4, p, label, button, input).
+  * These are in @layer base, so Tailwind utility classes (like text-sm, text-lg) automatically override them.
+  */
+
+  html {
+    font-size: var(--font-size);
+    scroll-behavior: smooth;
+  }
+
+  h1 {
+    font-family: var(--font-cormorant);
+    font-style: italic;
+  }
+
+  h2 {
+    font-family: var(--font-playfair);
+  }
+
+  h3 {
+    font-family: var(--font-playfair);
+  }
+
+  h4 {
+    font-family: var(--font-playfair);
+  }
+
+  label {
+    font-family: var(--font-poppins);
+  }
+
+  button {
+    font-family: var(--font-poppins);
+  }
+
+  input {
+    font-family: var(--font-poppins);
+  }
+}
